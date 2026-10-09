@@ -1,0 +1,178 @@
+{
+  "MASTER": {
+    "standart_esik": 0.37949767658764993,
+    "final_esigi": 0.5781512605042018,
+    "standart_metrikler": {
+      "TP": 314,
+      "FN": 8,
+      "TN": 105,
+      "FP": 286,
+      "Recall_%": 97.5,
+      "Specificity_%": 26.9,
+      "Precision_%": 52.3,
+      "F1_%": 68.1,
+      "MCC": 0.332,
+      "AUC_ROC_%": 80.6,
+      "PR_AUC_%": 76.3,
+      "FN_Rate_%": 2.5,
+      "FP_Rate_%": 73.1
+    },
+    "final_metrikler": {
+      "TP": 287,
+      "FN": 35,
+      "TN": 199,
+      "FP": 192,
+      "Recall_%": 89.1,
+      "Specificity_%": 50.9,
+      "Precision_%": 59.9,
+      "F1_%": 71.7,
+      "MCC": 0.424,
+      "AUC_ROC_%": 80.6,
+      "PR_AUC_%": 76.3,
+      "FN_Rate_%": 10.9,
+      "FP_Rate_%": 49.1
+    },
+    "hiperparametreler": {
+      "HistGBM": {
+        "learning_rate": 0.1,
+        "max_depth": 6
+      },
+      "RandomForest": {
+        "max_depth": null,
+        "n_estimators": 400
+      }
+    }
+  },
+  "KANSER": {
+    "standart_esik": 0.4799008917908189,
+    "final_esigi": 0.6537815126050421,
+    "standart_metrikler": {
+      "TP": 36,
+      "FN": 4,
+      "TN": 38,
+      "FP": 22,
+      "Recall_%": 90.0,
+      "Specificity_%": 63.3,
+      "Precision_%": 62.1,
+      "F1_%": 73.5,
+      "MCC": 0.529,
+      "AUC_ROC_%": 89.3,
+      "PR_AUC_%": 85.1,
+      "FN_Rate_%": 10.0,
+      "FP_Rate_%": 36.7
+    },
+    "final_metrikler": {
+      "TP": 34,
+      "FN": 6,
+      "TN": 49,
+      "FP": 11,
+      "Recall_%": 85.0,
+      "Specificity_%": 81.7,
+      "Precision_%": 75.6,
+      "F1_%": 80.0,
+      "MCC": 0.656,
+      "AUC_ROC_%": 89.3,
+      "PR_AUC_%": 85.1,
+      "FN_Rate_%": 15.0,
+      "FP_Rate_%": 18.3
+    },
+    "hiperparametreler": {
+      "HistGBM": {
+        "learning_rate": 0.1,
+        "max_depth": 6
+      },
+      "RandomForest": {
+        "max_depth": 10,
+        "n_estimators": 200
+      }
+    }
+  },
+  "CFTR": {
+    "standart_esik": 0.659053244009273,
+    "final_esigi": 0.6537815126050421,
+    "standart_metrikler": {
+      "TP": 13,
+      "FN": 0,
+      "TN": 4,
+      "FP": 6,
+      "Recall_%": 100.0,
+      "Specificity_%": 40.0,
+      "Precision_%": 68.4,
+      "F1_%": 81.2,
+      "MCC": 0.523,
+      "AUC_ROC_%": 95.4,
+      "PR_AUC_%": 96.9,
+      "FN_Rate_%": 0.0,
+      "FP_Rate_%": 60.0
+    },
+    "final_metrikler": {
+      "TP": 13,
+      "FN": 0,
+      "TN": 4,
+      "FP": 6,
+      "Recall_%": 100.0,
+      "Specificity_%": 40.0,
+      "Precision_%": 68.4,
+      "F1_%": 81.2,
+      "MCC": 0.523,
+      "AUC_ROC_%": 95.4,
+      "PR_AUC_%": 96.9,
+      "FN_Rate_%": 0.0,
+      "FP_Rate_%": 60.0
+    },
+    "hiperparametreler": {
+      "HistGBM": {
+        "learning_rate": 0.1,
+        "max_depth": 4
+      },
+      "RandomForest": {
+        "max_depth": 10,
+        "n_estimators": 200
+      }
+    }
+  },
+  "PAH": {
+    "standart_esik": 0.22755674635572629,
+    "final_esigi": 0.7142857142857144,
+    "standart_metrikler": {
+      "TP": 46,
+      "FN": 0,
+      "TN": 0,
+      "FP": 31,
+      "Recall_%": 100.0,
+      "Specificity_%": 0.0,
+      "Precision_%": 59.7,
+      "F1_%": 74.8,
+      "MCC": 0.0,
+      "AUC_ROC_%": 71.9,
+      "PR_AUC_%": 78.5,
+      "FN_Rate_%": 0.0,
+      "FP_Rate_%": 100.0
+    },
+    "final_metrikler": {
+      "TP": 43,
+      "FN": 3,
+      "TN": 9,
+      "FP": 22,
+      "Recall_%": 93.5,
+      "Specificity_%": 29.0,
+      "Precision_%": 66.2,
+      "F1_%": 77.5,
+      "MCC": 0.304,
+      "AUC_ROC_%": 71.9,
+      "PR_AUC_%": 78.5,
+      "FN_Rate_%": 6.5,
+      "FP_Rate_%": 71.0
+    },
+    "hiperparametreler": {
+      "HistGBM": {
+        "learning_rate": 0.1,
+        "max_depth": 4
+      },
+      "RandomForest": {
+        "max_depth": 10,
+        "n_estimators": 200
+      }
+    }
+  }
+}
