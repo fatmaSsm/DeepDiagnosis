@@ -25,10 +25,13 @@ The following results were recorded at the final decision thresholds in the team
 
 <table>
   <tr>
-    <td width="60%" valign="top">
-      <img src="assets/historical-performance.png" alt="Historical performance - final decision thresholds" width="100%">
+    <td width="38%" align="center" valign="middle">
+      <img
+        src="assets/historical-performance.png"
+        alt="Historical performance"
+        width="100%"
+      >
     </td>
-    <td width="40%" valign="top">
 
 <table>
   <thead>
