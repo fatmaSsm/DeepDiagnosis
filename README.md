@@ -23,10 +23,6 @@ The historical competition workflow included preprocessing, model comparison, cr
 
 The following results were recorded at the final decision thresholds in the team's internal competition test simulation.
 
-## Historical results
-
-The following results were recorded at the final decision thresholds in the team's internal competition test simulation.
-
 <table>
   <tr>
     <td width="60%" valign="top">
