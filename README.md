@@ -19,7 +19,7 @@ DeepDiagnosis is a team research project investigating machine learning approach
 
 The historical competition workflow included preprocessing, model comparison, cross-validation, and threshold analysis. The **publicly runnable implementation** in `src/pipeline.py` is a separate Logistic Regression baseline; it does **not** reproduce the historical ensemble or its scores.
 
-## Historical results
+## Historical Results
 
 The following results were recorded at the final decision thresholds in the team's internal competition test simulation.
 
@@ -61,7 +61,7 @@ These values reflect historical internal competition results and are presented f
 
 **Interpretation:** High recall does not imply reliable clinical performance; specificity and false-positive rates also matter. These historical results are **exploratory**, not independently reproduced or clinically validated. The original scripts have known preprocessing leakage risks. Results should **not** be attributed to the public baseline. The detailed recorded metrics are in [`results/historical_results.json`](results/historical_results.json).
 
-## Repository structure
+## Repository Structure
 
 ```text
 DeepDiagnosis/
@@ -76,7 +76,7 @@ DeepDiagnosis/
 └── README.md
 ```
 
-## Quick start
+## Quick Start
 
 Requires **Python 3.10+**. From the repository root:
 
@@ -110,13 +110,13 @@ python -m src.pipeline predict --group MASTER --input demo_data/YARISMA_TRAIN_MA
 
 Synthetic data are for demonstrating the code path, **not** for evaluating genomic classification performance. For separately authorized competition data, see [`data/README.md`](data/README.md).
 
-## Data availability
+## Data Availability
 
 The original TEKNOFEST competition datasets are **not included** because the team’s approval to publish code does not establish permission to redistribute competition-provided data. The repository includes a synthetic-data generator instead. Original trained models and competition reports are also excluded.
 
 No open-source license is asserted for the historical team code pending a separate licensing agreement.
 
-## Team and documentation
+## Team and Documentation
 
 Developed collaboratively by the **DeepDiagnosis team** for TEKNOFEST 2026. The team has approved the publication of the project code; the repository does not claim sole authorship of the competition work.
 
