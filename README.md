@@ -61,7 +61,7 @@ These values reflect historical internal competition results and are presented f
 
 **Interpretation:** High recall does not imply reliable clinical performance; specificity and false-positive rates also matter. These historical results are **exploratory**, not independently reproduced or clinically validated. The original scripts have known preprocessing leakage risks. Results should **not** be attributed to the public baseline. The detailed recorded metrics are in [`results/historical_results.json`](results/historical_results.json).
 
-## Repository structure 
+## Repository structure
 
 ```text
 DeepDiagnosis/
