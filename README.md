@@ -23,14 +23,69 @@ The historical competition workflow included preprocessing, model comparison, cr
 
 The following results were recorded at the final decision thresholds in the team's internal competition test simulation.
 
-![Historical performance comparison](assets/historical-performance.png)
+## Historical results
 
-| Group | Threshold | Recall | Specificity | F1 | MCC |
-| :--- | ---: | ---: | ---: | ---: | ---: |
-| MASTER | 0.578 | 89.1% | 50.9% | 71.7% | 0.424 |
-| KANSER | 0.654 | 85.0% | 81.7% | 80.0% | 0.656 |
-| CFTR | 0.654 | 100.0% | 40.0% | 81.2% | 0.523 |
-| PAH | 0.714 | 93.5% | 29.0% | 77.5% | 0.304 |
+The following results were recorded at the final decision thresholds in the team's internal competition test simulation.
+
+<table>
+  <tr>
+    <td width="60%" valign="top">
+      <img src="assets/historical-performance.png" alt="Historical performance - final decision thresholds" width="100%">
+    </td>
+    <td width="40%" valign="top">
+
+<table>
+  <thead>
+    <tr>
+      <th>Group</th>
+      <th>Threshold</th>
+      <th>Recall</th>
+      <th>Specificity</th>
+      <th>F1</th>
+      <th>MCC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MASTER</td>
+      <td>0.578</td>
+      <td>89.1%</td>
+      <td>50.9%</td>
+      <td>71.7%</td>
+      <td>0.424</td>
+    </tr>
+    <tr>
+      <td>KANSER</td>
+      <td>0.654</td>
+      <td>85.0%</td>
+      <td>81.7%</td>
+      <td>80.0%</td>
+      <td>0.656</td>
+    </tr>
+    <tr>
+      <td>CFTR</td>
+      <td>0.654</td>
+      <td>100.0%</td>
+      <td>40.0%</td>
+      <td>81.2%</td>
+      <td>0.523</td>
+    </tr>
+    <tr>
+      <td>PAH</td>
+      <td>0.714</td>
+      <td>93.5%</td>
+      <td>29.0%</td>
+      <td>77.5%</td>
+      <td>0.304</td>
+    </tr>
+  </tbody>
+</table>
+
+   </td>
+  </tr>
+</table>
+
+These values reflect historical internal competition results and are presented for documentation purposes only. They do not represent clinical validation or independently reproduced benchmark results.
 
 **Interpretation:** High recall does not imply reliable clinical performance; specificity and false-positive rates also matter. These historical results are **exploratory**, not independently reproduced or clinically validated. The original scripts have known preprocessing leakage risks. Results should **not** be attributed to the public baseline. The detailed recorded metrics are in [`results/historical_results.json`](results/historical_results.json).
 
