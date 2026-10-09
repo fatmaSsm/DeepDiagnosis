@@ -23,62 +23,35 @@ The historical competition workflow included preprocessing, model comparison, cr
 
 The following results were recorded at the final decision thresholds in the team's internal competition test simulation.
 
-<table>
-  <tr>    
-    <td width="38%" align="center" valign="middle">
-      <img
-        src="assets/historical-performance.png"
-        alt="Historical performance"
-        width="340"
-      >
-    </td>
 
 <table>
-  <thead>
-    <tr>
-      <th>Group</th>
-      <th>Threshold</th>
-      <th>Recall</th>
-      <th>Specificity</th>
-      <th>F1</th>
-      <th>MCC</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>MASTER</td>
-      <td>0.578</td>
-      <td>89.1%</td>
-      <td>50.9%</td>
-      <td>71.7%</td>
-      <td>0.424</td>
-    </tr>
-    <tr>
-      <td>KANSER</td>
-      <td>0.654</td>
-      <td>85.0%</td>
-      <td>81.7%</td>
-      <td>80.0%</td>
-      <td>0.656</td>
-    </tr>
-    <tr>
-      <td>CFTR</td>
-      <td>0.654</td>
-      <td>100.0%</td>
-      <td>40.0%</td>
-      <td>81.2%</td>
-      <td>0.523</td>
-    </tr>
-    <tr>
-      <td>PAH</td>
-      <td>0.714</td>
-      <td>93.5%</td>
-      <td>29.0%</td>
-      <td>77.5%</td>
-      <td>0.304</td>
-    </tr>
-  </tbody>
+  <tr>
+    <td width="40%" align="center" valign="middle">
+      <img
+        src="assets/historical-performance.png"
+        alt="Historical model performance"
+        width="300"
+      />
+    </td>
+    <td width="60%" align="center" valign="middle">
+      <table>
+        <tr>
+          <th>Group</th>
+          <th>Threshold</th>
+          <th>Recall</th>
+          <th>Specificity</th>
+          <th>F1</th>
+          <th>MCC</th>
+        </tr>
+        <tr><td>MASTER</td><td>0.578</td><td>89.1%</td><td>50.9%</td><td>71.7%</td><td>0.424</td></tr>
+        <tr><td>KANSER</td><td>0.654</td><td>85.0%</td><td>81.7%</td><td>80.0%</td><td>0.656</td></tr>
+        <tr><td>CFTR</td><td>0.654</td><td>100.0%</td><td>40.0%</td><td>81.2%</td><td>0.523</td></tr>
+        <tr><td>PAH</td><td>0.714</td><td>93.5%</td><td>29.0%</td><td>77.5%</td><td>0.304</td></tr>
+      </table>
+    </td>
+  </tr>
 </table>
+
 
    </td>
   </tr>
