@@ -1,69 +1,267 @@
 # DeepDiagnosis || 🧬
 
-**Genomic variant pathogenicity classification | TEKNOFEST 2026 – Healthcare AI**
+**Genomic Variant Pathogenicity Classification | TEKNOFEST 2026 – Healthcare AI**
 
-A research/competition project exploring machine learning approaches to genomic variant pathogenicity classification across four groups: **MASTER, KANSER, CFTR and PAH**. The original experiments explored **HistGradientBoosting, RandomForest, LogisticRegression, soft-voting ensembles, stratified cross-validation and decision threshold optimization**.
+DeepDiagnosis is a machine learning research project developed by the **DeepDiagnosis team** for the **TEKNOFEST 2026 Healthcare Artificial Intelligence Competition**.
 
-> **Research and educational use only.** Not clinically validated; not intended for diagnosis, treatment, or clinical decision-making.
+The project investigates computational approaches to genomic variant pathogenicity classification through data preprocessing, ensemble learning, stratified cross-validation, model evaluation, and decision threshold optimization.
 
-## Repository overview
+Four dataset groups were examined: **MASTER, KANSER, CFTR, and PAH**.
 
-| Location | Contents |
+> ⚠️ **Disclaimer:** This project is intended exclusively for research and educational purposes. It has not been clinically validated and must not be used for medical diagnosis, treatment, or clinical decision-making.
+
+---
+
+## 🎯 Project Objectives
+
+The primary objective of DeepDiagnosis is to investigate machine learning approaches for identifying potentially pathogenic genomic variants while accounting for the challenges associated with genomic classification datasets.
+
+The project focuses on:
+
+- Developing and comparing supervised machine learning models.
+- Processing incomplete and heterogeneous tabular data.
+- Addressing class imbalance and evaluating minority-class performance.
+- Investigating ensemble learning methods.
+- Optimizing classification decision thresholds.
+- Evaluating false negatives and false positives across different variant groups.
+- Analyzing model performance using multiple evaluation metrics.
+
+The research emphasizes the importance of balancing sensitivity and specificity rather than relying solely on accuracy.
+
+## 🛠️ Technologies & Tools
+
+| Category | Technologies |
 |---|---|
-| `src/pipeline.py` | Clean leakage-aware **Logistic Regression baseline** for training and CSV prediction |
-| `src/make_demo_data.py` | Synthetic demonstration dataset generator (no genomic/competition records) |
-| `legacy/` | Unmodified original v2 competition scripts (historical reference; known leakage caveats) |
-| `results/historical_results.json` | Historical competition-run metrics; **not independently reproduced** |
-| `docs/METHODOLOGY.md` | Methodological differences and limitations |
-| `tests/` | Pipeline unit tests |
-| `data/README.md` | Input format and data usage guidance |
+| Programming Language | Python |
+| Data Processing | Pandas, NumPy |
+| Machine Learning | Scikit-learn |
+| Algorithms | HistGradientBoosting, RandomForest, LogisticRegression |
+| Ensemble Learning | Soft Voting |
+| Model Evaluation | Stratified Cross-Validation, Confusion Matrix, ROC-AUC, PR-AUC |
+| Performance Metrics | Recall, Precision, Specificity, F1-Score, MCC |
+| Visualization | Matplotlib |
+| Exploratory Analysis | Orange Data Mining |
 
-## Getting started
+## 🧠 Machine Learning Methodology
 
-Python 3.10+ recommended. Run from the repository root:
+### 1. Data Preparation
+
+The original competition experiments involved preprocessing genomic variant datasets to support machine learning analysis.
+
+The workflow included:
+
+- Inspecting dataset characteristics and feature distributions.
+- Identifying missing values.
+- Handling numerical and categorical variables.
+- Investigating feature quality and class distributions.
+- Preparing datasets for model training and evaluation.
+
+The historical competition pipeline contains known preprocessing leakage risks, documented in `docs/METHODOLOGY.md`.
+
+### 2. Model Development
+
+Three primary classification algorithms were investigated:
+
+**HistGradientBoosting Classifier**
+
+A gradient boosting method designed for efficient learning from tabular data.
+
+**Random Forest Classifier**
+
+An ensemble of decision trees that captures nonlinear relationships and feature interactions.
+
+**Logistic Regression**
+
+A linear classification algorithm used as a baseline and as a component of the original experimental approach.
+
+### 3. Ensemble Learning
+
+The original competition experiments investigated soft-voting ensembles to combine predictions from multiple classifiers.
+
+The purpose was to explore whether combining different modeling approaches could improve classification performance and robustness.
+
+### 4. Cross-Validation and Threshold Optimization
+
+The experimental workflow explored stratified cross-validation to preserve class proportions across folds.
+
+Classification thresholds were also investigated to evaluate trade-offs between:
+
+- Recall (Sensitivity)
+- Specificity
+- Precision
+- F1-Score
+- Matthews Correlation Coefficient (MCC)
+- False Negative Rate
+
+Threshold selection is especially important in imbalanced classification problems because different thresholds can substantially change false-positive and false-negative rates.
+
+The original experiments should be interpreted as exploratory because the historical implementation has identified methodological limitations.
+
+---
+
+## 📊 Historical Model Performance
+
+The following results were recorded during the team's internal competition experiments using optimized decision thresholds.
+
+| Dataset Group | Final Threshold | Recall (%) | Specificity (%) | F1-Score (%) | MCC | False Negative Rate (%) |
+|---|---:|---:|---:|---:|---:|---:|
+| MASTER | 0.578 | 89.1 | 50.9 | 71.7 | 0.424 | 10.9 |
+| KANSER | 0.654 | 85.0 | 81.7 | 80.0 | 0.656 | 15.0 |
+| CFTR | 0.654 | 100.0 | 40.0 | 81.2 | 0.523 | 0.0 |
+| PAH | 0.714 | 93.5 | 29.0 | 77.5 | 0.304 | 6.5 |
+
+**Interpretation**
+
+The historical results demonstrate varying trade-offs between recall and specificity across dataset groups.
+
+In particular, high recall values should not be interpreted as evidence of clinical reliability. Lower specificity values indicate increased false-positive classifications.
+
+**Important:** These metrics originate from an internal, non-independent test simulation. They have not been independently reproduced or clinically validated. The historical pipeline has known preprocessing leakage risks, so the results should be treated as exploratory rather than as verified estimates of generalization performance.
+
+These scores belong to the original competition experiments and **must not be attributed to the public baseline implementation**.
+
+---
+
+## 📁 Repository Structure
+
+| Location | Description |
+|---|---|
+| `src/pipeline.py` | Leakage-aware Logistic Regression baseline for model training and CSV prediction |
+| `src/make_demo_data.py` | Synthetic dataset generator for demonstrating the public pipeline |
+| `legacy/` | Original competition scripts retained for historical reference |
+| `results/historical_results.json` | Recorded historical experimental results |
+| `docs/METHODOLOGY.md` | Methodology, implementation differences, and known limitations |
+| `tests/` | Unit tests for the public machine learning pipeline |
+| `data/README.md` | Dataset format and usage instructions |
+| `requirements.txt` | Python dependencies |
+| `README.md` | Project documentation |
+
+### Public Baseline vs. Original Competition Models
+
+This repository distinguishes between two implementations.
+
+**Original Competition Experiments**
+
+The original DeepDiagnosis experiments investigated multiple machine learning algorithms, ensemble predictions, and decision threshold optimization.
+
+These scripts are retained under `legacy/` for historical and educational reference.
+
+**Public Reproducible Baseline**
+
+The `src/pipeline.py` implementation provides a separate, leakage-aware Logistic Regression baseline with training and CSV prediction functionality.
+
+It is intended to demonstrate a clearer machine learning workflow and does not reproduce the original ensemble architecture or its reported performance.
+
+---
+
+## 🚀 Installation & Usage
+
+**Requirements:** Python 3.10 or later.
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/fatmaSsm/DeepDiagnosis.git
+cd DeepDiagnosis
+```
+
+### 2. Create a Virtual Environment
 
 ```bash
 python -m venv .venv
-# Windows: .venv\Scripts\activate
-# macOS/Linux: source .venv/bin/activate
+```
+
+Activate the environment.
+
+**Windows PowerShell:**
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+**Linux / macOS:**
+
+```bash
+source .venv/bin/activate
+```
+
+### 3. Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
+
+### 4. Run Unit Tests
+
+```bash
 python -m unittest discover -s tests -v
+```
+
+### 5. Generate Synthetic Demo Data
+
+```bash
 python -m src.make_demo_data --output-dir demo_data
+```
+
+### 6. Train Baseline Models
+
+```bash
 python -m src.pipeline train --data-dir demo_data --group ALL
+```
+
+### 7. Generate Predictions
+
+```bash
 python -m src.pipeline predict --group MASTER --input demo_data/YARISMA_TRAIN_MASTER.csv --output outputs/demo_predictions.csv
 ```
 
-For authorized original datasets, place the four named CSV files in `data/`, then run:
+**Note:** Synthetic data are generated only to demonstrate the implementation. They must not be used to make scientific or clinical performance claims.
+
+### Using Authorized Competition Data
+
+Researchers with authorized access to the original competition datasets may place the required CSV files in the `data/` directory and execute:
 
 ```bash
 python -m src.pipeline train --data-dir data --group ALL
 ```
 
-Trained model artifacts and private data stay **local and git-ignored**. The example is illustrative and generated entirely from random synthetic features.
+Dataset formats and usage instructions are documented in `data/README.md`.
 
-## Historical results
+---
 
-The metrics JSON in `results/` preserves the team's historical run outputs for transparency. They reflect an internal, non-independent test simulation with different preprocessing/algorithm from `src/pipeline.py`; results are not external or clinical validation. The original pipeline has known preprocessing leakage risks; treat historical scores as **exploratory**, not as an independently verified benchmark. We intentionally do not claim that the publication baseline achieves those scores.
+## 🔒 Dataset Availability
 
-## Motivation and research considerations
+The original genomic variant datasets used in the TEKNOFEST 2026 Healthcare AI Competition are **not publicly distributed in this repository**.
 
-Genomic variant classification involves class imbalance, incomplete annotation and uncertainty. We examine recall, specificity, precision, F1, MCC, ROC-AUC and PR-AUC; recall alone should not be treated as clinical safety. Class label 1 represents the positive class in the supplied datasets, with its clinical interpretation dependent on data definitions.
+These datasets were provided for competition purposes, and permission to publish the project source code does not automatically grant redistribution rights for the underlying data.
 
-## Team and attribution
+Therefore, the original training datasets have been intentionally excluded to respect data-use conditions and avoid unauthorized distribution.
 
-Developed collaboratively by the **DeepDiagnosis team** for TEKNOFEST 2026. **The team has approved publishing the project code on GitHub.** Individual contributions belong to their respective team members; this repository does not claim sole authorship of the competition work.
+To support reproducibility of the public software workflow, the repository provides a **synthetic demonstration dataset generator**.
 
-## Dataset availability and licensing
+The original trained model artifacts and competition reports are also excluded.
 
-**Why are the original datasets not included?** The training CSV files used in the TEKNOFEST 2026 Healthcare AI competition were provided for the competition. Although the DeepDiagnosis team has approved publishing the project code, this does not automatically grant redistribution rights for the underlying datasets. To respect data-use conditions and avoid distributing data without verified permission, **the original competition datasets are not published in this repository**.
+The repository does not currently assert an open-source license for the historical team code. Any future licensing requires agreement on the applicable rights and licensing terms.
 
-The repository provides a synthetic-data generator so that readers can inspect and run the public baseline without access to the competition records. **Synthetic data are for software demonstration only**, not for scientific or clinical performance claims. Anyone with separately authorized access to the original data may place their local CSVs in `data/` following [`data/README.md`](data/README.md).
+---
 
-The original competition-trained model files and competition reports are also not distributed. Historical aggregate evaluation results are retained with explicit methodological caveats. No open-source license is asserted for the legacy team code at this time; licensing requires a separate agreement on rights and terms.
+## 👥 Team & Acknowledgments
 
-## Further reading
+DeepDiagnosis was collaboratively developed by the **DeepDiagnosis team** as part of the TEKNOFEST 2026 Healthcare Artificial Intelligence Competition.
 
-See [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) for known limitations and the distinction between competition code and public baseline.
+The project reflects the collective efforts of its team members in machine learning experimentation, data analysis, model evaluation, and competition research.
+
+The team has approved the publication of the project code on GitHub. Individual contributions remain attributable to their respective authors, and this repository does not claim sole authorship of the original competition work.
+
+---
+
+## 📚 Documentation
+
+For additional technical information, refer to:
+
+- `docs/METHODOLOGY.md` — Experimental methodology, methodological limitations, and implementation differences.
+- `data/README.md` — Data requirements and usage guidelines.
+- `results/historical_results.json` — Historical experiment metrics.
 
 ---
 
