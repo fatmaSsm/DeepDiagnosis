@@ -24,12 +24,12 @@ The historical competition workflow included preprocessing, model comparison, cr
 The following results were recorded at the final decision thresholds in the team's internal competition test simulation.
 
 <table>
-  <tr>
+  <tr>    
     <td width="38%" align="center" valign="middle">
       <img
         src="assets/historical-performance.png"
         alt="Historical performance"
-        width="100%"
+        width="340"
       >
     </td>
 
